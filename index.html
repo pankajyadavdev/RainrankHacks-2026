@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090d2b" />
+  <meta name="description" content="RainRang — turn ordinary moments into living art." />
+  <title>RainRang — Everyday Art</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="RainRang home"><span class="brand-mark">✿</span><span>Rain<span class="brand-accent">Rang</span><small>EVERYDAY ART</small></span></a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="#home">Home</a><a href="#how">How it works</a><a href="#canvas-section">Create</a></nav>
+      <button class="icon-button" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">☼</button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> EVERYDAY MAGIC, REIMAGINED</p>
+          <h1>Turn ordinary moments into <span>living art.</span></h1>
+          <p class="hero-text">Tap, move, and play with colour. Every action leaves a mark, and every mark becomes part of your own evolving rangoli.</p>
+          <div class="hero-actions"><button class="primary-button" id="startButton">Start creating <span>↗</span></button><a class="text-link" href="#how">Explore the idea <span>↓</span></a></div>
+          <div class="hero-tags"><span>✦ Rangoli-inspired</span><span>◉ Interactive</span><span>♡ Made by you</span></div>
+        </div>
+        <div class="hero-art" aria-label="Decorative colourful rangoli illustration">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="rangoli-hero" aria-hidden="true"><span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span><span class="petal p4"></span><span class="petal p5"></span><span class="petal p6"></span><span class="petal p7"></span><span class="petal p8"></span><span class="hero-core">✺</span></div>
+          <span class="float-note note-a">Your move.</span><span class="float-note note-b">Our rangoli.</span>
+          <span class="sparkle s1">✦</span><span class="sparkle s2">✧</span><span class="sparkle s3">✦</span>
+        </div>
+      </section>
+
+      <section class="how-section" id="how">
+        <div class="section-heading"><div><p class="eyebrow">A LITTLE MAGIC IN EVERY ACTION</p><h2>How RainRang works</h2></div><p>Start with one small action. Watch it become something beautiful.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-icon pink">↗</span><h3>Touch → Create</h3><p>Tap or click to make petals, dots and ripples.</p></article>
+          <article class="feature-card"><span class="feature-icon aqua">〰</span><h3>Move → Flow</h3><p>Move your pointer to draw colourful trails.</p></article>
+          <article class="feature-card"><span class="feature-icon gold">☂</span><h3>Rain → Ripple</h3><p>Switch on rain mode and let droplets spread into patterns.</p></article>
+          <article class="feature-card"><span class="feature-icon violet">✺</span><h3>Connect → Evolve</h3><p>Your marks stay on the canvas and build a living rangoli.</p></article>
+        </div>
+      </section>
+
+      <section class="studio-section" id="canvas-section">
+        <div class="section-heading studio-heading"><div><p class="eyebrow">YOUR CANVAS IS WAITING</p><h2>The Living Canvas</h2></div><p>There’s no wrong way to create. Try a few taps, then make it your own.</p></div>
+        <div class="studio-layout">
+          <div class="canvas-wrap">
+            <div class="canvas-topline"><span class="live-indicator"><i></i> LIVE CANVAS</span><span id="markCount">0 marks created</span></div>
+            <canvas id="artCanvas" aria-label="Interactive artwork canvas. Click or tap to create rangoli patterns."></canvas>
+            <div class="canvas-hint" id="canvasHint">Tap anywhere to make your first mark <span>✦</span></div>
+          </div>
+          <aside class="controls-panel">
+            <div class="control-group"><div class="control-title"><h3>Choose your colour</h3><span>✦</span></div><div class="swatches" role="group" aria-label="Choose colour"><button class="swatch selected" data-color="#ff4fa3" style="--swatch:#ff4fa3" aria-label="Pink"></button><button class="swatch" data-color="#ff9e36" style="--swatch:#ff9e36" aria-label="Orange"></button><button class="swatch" data-color="#ffd84f" style="--swatch:#ffd84f" aria-label="Yellow"></button><button class="swatch" data-color="#2de2c5" style="--swatch:#2de2c5" aria-label="Turquoise"></button><button class="swatch" data-color="#6c78ff" style="--swatch:#6c78ff" aria-label="Blue"></button><button class="swatch" data-color="#c77dff" style="--swatch:#c77dff" aria-label="Violet"></button></div></div>
+            <div class="control-group"><div class="control-title"><h3>Creative mode</h3></div><div class="mode-buttons"><button class="mode-button active" data-mode="petal"><span>✿</span> Petals</button><button class="mode-button" data-mode="ripple"><span>◎</span> Ripples</button><button class="mode-button" data-mode="star"><span>✦</span> Stars</button></div></div>
+            <div class="control-group rain-row"><div><h3>Rain mode</h3><p>Let the drops do their thing</p></div><button class="switch" id="rainToggle" role="switch" aria-checked="false" aria-label="Toggle rain mode"><span></span></button></div>
+            <div class="control-group"><div class="control-title"><h3>Pattern intensity</h3><output id="intensityValue">5</output></div><input id="intensity" type="range" min="2" max="9" value="5" aria-label="Pattern intensity" /></div>
+            <div class="control-actions"><button class="secondary-button" id="undoButton">↶ Undo</button><button class="secondary-button" id="resetButton">↻ Reset</button></div>
+            <button class="primary-button save-button" id="saveButton">↓ Save my rangoli</button>
+            <p class="privacy-note">✦ Your artwork stays in this browser session. No account needed.</p>
+          </aside>
+        </div>
+      </section>
+      <section class="closing-card"><div class="closing-flower">✿</div><div><p class="eyebrow">EVERY MARK MATTERS</p><h2>A little action. A little wonder.</h2><p>Make something that could only come from you.</p></div><button class="primary-button" id="closingStart">Create your rangoli <span>↗</span></button></section>
+    </main>
+    <footer><a class="footer-brand" href="#home">Rain<span>Rang</span></a><span>Everyday Art · DJXHack 2026 concept</span><span class="footer-note">Your move. Our rangoli. ✦</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
